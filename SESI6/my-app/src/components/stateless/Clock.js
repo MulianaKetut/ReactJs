@@ -5,14 +5,14 @@ export default function Clock() {
 
   useEffect(() => {
     // component did mount
-    this.timerID = setInterval(() => tick(), 1000);
+    const timerID = setInterval(tick, 1000);
     // component did update di sini
-    return () => {
+    return () =>
       // component will unmount => unsubscribe and garbage collection
-      clearInterval(this.timerID);
-    };
+      clearInterval(timerID);
+
     // array dipakai jika diperluka
-  });
+  }, []);
 
   function tick() {
     setDate(new Date());
@@ -21,8 +21,9 @@ export default function Clock() {
   return (
     <>
       <div>
-        <h1>Realtime CLOCK</h1>
+        <h1>Function Realtime CLOCK</h1>
         <hr />
+        <h1>{date.toLocaleDateString()}</h1>
         <h1>{date.toLocaleTimeString()}</h1>
       </div>
     </>

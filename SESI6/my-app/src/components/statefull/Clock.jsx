@@ -9,7 +9,7 @@ export default class Clock extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000);
+    this.timerID = setInterval(this.tick.bind(this), 1000);
   }
 
   componentWillUnmount() {
@@ -26,7 +26,7 @@ export default class Clock extends React.Component {
     return (
       <>
         <div>
-          <h1>Realtime CLOCK</h1>
+          <h1>Class Realtime CLOCK</h1>
           <hr />
           <h1>{this.state.date.toLocaleTimeString()}</h1>
         </div>

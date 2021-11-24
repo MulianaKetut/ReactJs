@@ -6,7 +6,7 @@ export default function FetchDataAxios() {
 
   useEffect(() => {
     Fetchs.getData("/todos")
-      .then((data) => setTodos(data.slice(0, 20)));
+      .then((data) => setTodos(data.data.slice(0,10)));
   });
 
   return (
