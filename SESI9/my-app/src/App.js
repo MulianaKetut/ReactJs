@@ -6,6 +6,7 @@ import {
   Link,
   useParams,
   useRouteMatch,
+  Redirect,
 } from "react-router-dom";
 
 import { useState, useEffect } from "react";
@@ -18,13 +19,12 @@ function App() {
       <Link to="/about">About</Link>|&nbsp;
       <Link to="/abouts">Abouts</Link>|&nbsp;
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route path="/home" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/abouts" component={Abouts} />
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route exact path="/about/:id" children={<About />}></Route>
+        <Route path="/contact" component={Contact} />
+        <Redirect exact from="/" to="/home" />
+        {/* <Route exact path="/about/:id" children={<About />}></Route> */}
       </Switch>
     </BrowserRouter>
   );
@@ -103,6 +103,25 @@ function Abouts() {
       </Switch>
     </>
   );
+}
+
+function ProtectedPage(){
+  let auth = auth.signedIn()
+
+  if(!auth){
+    return(
+      <Redirect to={{
+        pathname: '/login',
+      }}/>
+    )
+  }
+
+  return(
+    <>
+      <h1>Contact</h1>
+    </>
+  )
+
 }
 
 export default App;

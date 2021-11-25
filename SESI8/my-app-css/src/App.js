@@ -3,7 +3,7 @@ import "./App.css";
 // import BootstrapCss from "./components/BootstrapCss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ControlledCarousel from "./components/reactBootstrap/ControlledCarousel";
-import Navbar from "./components/reactBootstrap/Navbar";
+import NavbarC from "./components/reactBootstrap/Navbar";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <BootstrapCss></BootstrapCss>
       </div> */}
       <div>
-        <Navbar></Navbar>
+        <NavbarC></NavbarC>
         <ControlledCarousel></ControlledCarousel>
       </div>
       <div className="App">

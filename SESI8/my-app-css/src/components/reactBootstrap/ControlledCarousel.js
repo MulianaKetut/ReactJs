@@ -10,7 +10,7 @@ export default function ControlledCarousel() {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={100}>
         <img
           className="d-block w-100"
           src="https://placeimg.com/640/480/tech"
