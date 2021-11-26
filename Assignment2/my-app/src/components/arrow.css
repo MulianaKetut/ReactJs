@@ -1,0 +1,61 @@
+.arrow-1 {
+  width: 150px;
+  height: 30px;
+  display: flex;
+}
+.arrow-1:before {
+  content: "";
+  background: currentColor;
+  width: 15px;
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    calc(100% - 15px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+  animation: a1 1.5s infinite linear;
+}
+@keyframes a1 {
+  90%,
+  100% {
+    flex-grow: 1;
+  }
+}
+
+.arrow-5 {
+  width: 60px;
+  height: 25px;
+  display: grid;
+  overflow: hidden;
+}
+.arrow-5:before,
+.arrow-5:after {
+  content: "";
+  grid-area: 1/1;
+  background: currentColor;
+  clip-path: polygon(
+    0 10px,
+    calc(100% - 15px) 10px,
+    calc(100% - 15px) 0,
+    100% 50%,
+    calc(100% - 15px) 100%,
+    calc(100% - 15px) calc(100% - 10px),
+    0 calc(100% - 10px)
+  );
+  animation: a5 1s infinite;
+  transform: translate(calc(0% + var(--s, 0%)));
+}
+
+.arrow-5:after {
+  --s: -100%;
+}
+
+@keyframes a5 {
+  80%,
+  100% {
+    transform: translate(calc(100% + var(--s, 0%)));
+  }
+}
