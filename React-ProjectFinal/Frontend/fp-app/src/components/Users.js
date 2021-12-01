@@ -189,7 +189,7 @@ export default function Users() {
                           onClick={() => handleEdit(users[keys])}
                           className="btn btn-outline-info"
                         >
-                          <i class="bi bi-pencil-square"></i>
+                          <i className="bi bi-pencil-square"></i>
                         </button>
                         &nbsp;
                         <button
@@ -206,7 +206,7 @@ export default function Users() {
             </div>
           )}
         </div>
-        <div classNama="col-2"></div>
+        <div className="col-2"></div>
       </div>
     </>
   );
