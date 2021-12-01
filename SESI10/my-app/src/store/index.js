@@ -1,4 +1,5 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 const initialState = {
   counter: 0,
@@ -17,6 +18,8 @@ const counter = (state = initialState, action) => {
   }
 };
 
-const store = createStore(counter);
+const enhancer = applyMiddleware(thunk)
+
+const store = createStore(counter, enhancer);
 
 export default store;
